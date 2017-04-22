@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<layout version="0.1.0">
+    <adminhtml_managefreegift_index>
+        <reference name="content">
+            <block type="freegift/adminhtml_gridgift" name="freegift.grid.container" template="freegift.phtml" />
+        </reference>
+    </adminhtml_managefreegift_index>
+	
+</layout>

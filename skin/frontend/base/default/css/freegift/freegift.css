@@ -1,0 +1,23 @@
+.freegift{
+    display: inline-block;
+        margin-bottom: 5px;
+}
+.gift-image {
+    max-width: 95px;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+}
+.gift-image label img {
+    margin: auto;
+    float:none !important;
+}
+.gift-image h5 {
+    margin: auto;
+    display: inline-block;
+}
+
+.gift-image input {
+    margin: auto;
+    display: block;
+}

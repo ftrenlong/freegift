@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magegiant
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the magegiant.com license that is
+ * available through the world-wide-web at this URL:
+ * http://magegiant.com/license-agreement/
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    Magegiant
+ * @package     Magegiant_GiantPointsBehavior
+ * @copyright   Copyright (c) 2014 Magegiant (http://magegiant.com/)
+ * @license     http://magegiant.com/license-agreement/
+ */
+-->
+<config>
+    <menu>
+        <giantpoints module="giantpointsbehavior" translate="title">
+<!--            <children>
+                <earning module="giantpoints" translate="title">
+                    <title>Customer Earning</title>
+                    <sort_order>10</sort_order>
+                    <children>
+                        <earning_rate>
+                            <title>Earning Rate</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/giantpoints_earning_rate</action>
+                        </earning_rate>
+                        <behavior>
+                            <title>Behavior Rules</title>
+                            <sort_order>80</sort_order>
+                            <children>
+                                <manage_rule module="giantpoints" translate="title">
+                                    <title>Manage Rules</title>
+                                    <sort_order>10</sort_order>
+                                    <action>adminhtml/giantpoints_rule</action>
+                                </manage_rule>
+                                <configuration module="giantpoints" translate="title">
+                                    <title>Settings</title>
+                                    <sort_order>20</sort_order>
+                                    <action>adminhtml/giantpoints_behavior</action>
+                                </configuration>
+                            </children>
+                        </behavior>
+                    </children>
+                </earning>
+            </children>-->
+        </giantpoints>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <giantpoints module="giantpointsbehavior" translate="title">
+                        <children>
+                            <earning module="giantpoints" translate="title">
+                                <title>Customer Earning</title>
+                                <sort_order>10</sort_order>
+                                <children>
+                                    <earning_rate>
+                                        <title>Earning Rate</title>
+                                        <sort_order>10</sort_order>
+                                    </earning_rate>
+                                    <behavior>
+                                        <title>Behavior Rules</title>
+                                        <children>
+                                            <manage_rule module="giantpoints" translate="title">
+                                                <title>Manage Rules</title>
+                                                <sort_order>10</sort_order>
+                                            </manage_rule>
+                                            <configuration module="giantpoints" translate="title">
+                                                <title>Settings</title>
+                                                <sort_order>20</sort_order>
+                                            </configuration>
+                                        </children>
+                                    </behavior>
+                                </children>
+                            </earning>
+                        </children>
+                    </giantpoints>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

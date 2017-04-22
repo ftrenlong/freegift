@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Configuration file for admin menu and access permission
+ */
+-->
+<config>
+   
+	<menu>
+        <imedia_rewards_points>
+		   <title>Reward Points</title>
+			<sort_order>9999</sort_order>
+            <children>
+               <rewardpoints translate="title" module="imedia_rewardpoints">
+                    <title>Manage Reward Points</title>
+                    <sort_order>210</sort_order> 
+                    <action>adminhtml/rewardpoints</action>
+                </rewardpoints>
+            </children>
+        </imedia_rewards_points>
+    </menu>
+	
+    <!-- Access permissions -->
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <customer>
+                        <children>
+                            <reward_points translate="title" module="imedia_rewardpoints">
+                                <title>Manage reward points</title>
+                                <sort_order>31</sort_order>
+                            </reward_points>
+                        </children>
+                    </customer>
+					
+					<system>
+                        <children>
+                            <config>
+                                <children>
+                                    <rewardpoints translate="title" module="imedia_rewardpoints">
+                                        <title>Reward Points</title>
+                                    </rewardpoints>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

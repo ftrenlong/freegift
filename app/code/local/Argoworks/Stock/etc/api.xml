@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config>
+	<api>
+		<resources>
+			<argoworks_stock translate="title" module="argoworks_stock">
+				<model>argoworks_stock/api</model>
+				<title>Stock API</title>
+				<acl>argoworks_stock</acl>
+				<methods>
+					<setData translate="title" module="argoworks_stock">
+						<title>Update stock data</title>
+						<acl>argoworks_stock/setStockData</acl>
+						<method>setStockData</method>
+					</setData>
+					<getData translate="title" module="argoworks_stock">
+						<title>Retrieve stock data</title>
+						<acl>argoworks_stock/getStockData</acl>
+						<method>getStockData</method>
+					</getData>
+				</methods>
+				<faults module="argoworks_stock">
+					<data_invalid>
+						<code>102</code>
+						<message>Invalid data given. Details in error message.</message>
+					</data_invalid>
+				</faults>
+			</argoworks_stock>
+		</resources>
+		<resources_alias>
+			<argoworks_stock>argoworks_stock</argoworks_stock>
+		</resources_alias>
+		<acl>
+			<resources>
+				<argoworks_stock translate="title" module="argoworks_stock">
+					<title>Stock</title>
+					<setStockData translate="title" module="argoworks_stock">
+						<title>Update stock data</title>
+					</setStockData>
+					<getStockData translate="title" module="argoworks_stock">
+						<title>Retrieve stock data</title>
+					</getStockData>
+				</argoworks_stock>
+			</resources>
+		</acl>
+	</api>
+</config>

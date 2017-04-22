@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Argoworks_Order>
+			<version>1.0.0</version>
+		</Argoworks_Order>
+	</modules>
+	<global>
+		<helpers>
+			<argoworks_order>
+				<class>Argoworks_Order_Helper</class>
+			</argoworks_order>
+		</helpers>
+		<models>
+			<argoworks_order>
+				<class>Argoworks_Order_Model</class>
+			</argoworks_order>
+		</models>
+		<blocks>
+			<argoworks_order>
+				<class>Argoworks_Order_Block</class>
+			</argoworks_order>
+		</blocks>
+	</global>
+</config>

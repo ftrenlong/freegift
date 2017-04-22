@@ -1,0 +1,62 @@
+<?php
+/**
+ * Magegiant
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magegiant.com license that is
+ * available through the world-wide-web at this URL:
+ * https://magegiant.com/license-agreement/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magegiant
+ * @package     Magegiant_GiantPoints
+ * @copyright   Copyright (c) 2014 Magegiant (https://magegiant.com/)
+ * @license     https://magegiant.com/license-agreement/
+ */
+?>
+<div class="box-account box-info box-referral">
+    <div class="box-head">
+        <h2 class="box-title"><?php echo $this->__('Referral Url and Code') ?>
+        </h2>
+    </div>
+    <div class="clear"></div>
+    <div class="referral-content">
+        <dl class="box-content">
+            <dd>
+                <div class="referral-url-box row-mg">
+                    <div class="referral-icon url-icon col-mg mg-lg-1 mg-md-1 mg-sm-1 mg-xs-1"></div>
+                    <div class="input-box col-mg mg-lg-11 mg-md-11 mg-sm-11 mg-xs-11">
+                        <input class="input-text" id="referral_url" name="referral_url" readonly value="<?php echo $this->getReferralUrl() ?>"
+                               onclick="this.select()">
+
+                        <p class="note"><?php echo $this->__('Referrals that access this URL are connected as referrals once they sign up or place an order.') ?></p>
+                    </div>
+                </div>
+                <div class="referral-url-box row-mg">
+                    <div class="referral-icon code-icon col-mg mg-lg-1 mg-md-1 mg-sm-1 mg-xs-1"></div>
+                    <div class="input-box col-mg mg-lg-11 mg-md-11 mg-sm-11 mg-xs-11">
+                        <input class="input-text" id="referral_code" name="referral_code" readonly
+                               value="<?php echo $this->getReferralCode() ?>" onclick="this.select()">
+
+                        <p class="note"><?php echo $this->__('Referrals should enter the code in coupon form at cart page.') ?></p>
+                    </div>
+                </div>
+                <div class="referral-url-box row-mg">
+                    <div class="referral-icon email-icon col-mg mg-lg-1 mg-md-1 mg-sm-1 mg-xs-1"></div>
+                    <div class="input-box col-mg mg-lg-11 mg-md-11 mg-sm-11 mg-xs-11">
+                        <input class="input-text" id="referral_code" name="referral_code" readonly
+                               value="<?php echo $this->getReferralEmail() ?>" onclick="this.select()">
+
+                        <p class="note"><?php echo $this->__('Referrals can enter your e-mail address at checkout or signup.') ?></p>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div class="clear"></div>

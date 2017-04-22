@@ -1,0 +1,9 @@
+<?php if ($this->getShowSharePurchase()) : ?>
+    <div class="giantpoints-chechout-purchase-share">
+        <div class="page-title">
+            <h1><?php echo $this->__('Earn rewards for sharing your purchase.'); ?></h1>
+        </div>
+
+        <?php echo $this->getChildHtml('giantpoints.behavior.social.order.items'); ?>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <api>
+        <resources>
+            <argoworks_freegift translate="title" module="argoworks_freegift">
+                <model>argoworks_freegift/api</model>
+                <title>Freegift API</title>
+                <acl>argoworks_freegift</acl>
+                <methods>
+                    <updatePointForCustomer translate="title" module="argoworks_freegift">
+                        <title>Update points for customer </title>
+                        <acl>argoworks_freegift/updatePointForCustomer</acl>
+                    </updatePointForCustomer>
+                </methods>
+                <faults module="argoworks_freegift">
+                    <data_invalid>
+                        <code>102</code>
+                        <message>Invalid data given. Details in error message.</message>
+                    </data_invalid>
+                </faults>
+            </argoworks_freegift>
+        </resources>
+        <resources_alias>
+            <argoworks_freegift>argoworks_freegift</argoworks_freegift>
+        </resources_alias>
+        <acl>
+            <resources>
+                <argoworks_freegift translate="title" module="argoworks_freegift">
+                    <title>Argoworks Free gift</title>
+                    <updatePointForCustomer translate="title" module="argoworks_freegift">
+                        <title>Update points for customer </title>						
+                    </updatePointForCustomer>					
+                </argoworks_freegift>
+            </resources>
+        </acl>
+    </api>
+</config>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magegiant
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the magegiant.com license that is
+ * available through the world-wide-web at this URL:
+ * http://magegiant.com/license-agreement/
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    Magegiant
+ * @package     Magegiant_GiantPointsUnlimit
+ * @copyright   Copyright (c) 2014 Magegiant (http://magegiant.com/)
+ * @license     http://magegiant.com/license-agreement/
+ */
+-->
+<config>
+    <modules>
+        <Magegiant_GiantPointsUnlimit>
+            <version>0.1.0</version>
+        </Magegiant_GiantPointsUnlimit>
+    </modules>
+    <global>
+        <models>
+            <giantpointsunlimit>
+                <class>Magegiant_GiantPointsUnlimit_Model</class>
+            </giantpointsunlimit>
+        </models>
+        <resources>
+            <magegiant_giantpointsunlimit_setup>
+                <setup>
+                    <module>Magegiant_GiantPointsUnlimit</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </magegiant_giantpointsunlimit_setup>
+            <giantpointsunlimit_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </giantpointsunlimit_write>
+            <giantpointsunlimit_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </giantpointsunlimit_read>
+        </resources>
+        <helpers>
+            <giantpointsunlimit>
+                <class>Magegiant_GiantPointsUnlimit_Helper</class>
+            </giantpointsunlimit>
+        </helpers>
+        <events>
+            <giantpoints_transaction_increment>
+                <observers>
+                    <giantpointsunlimit_observers>
+                        <class>giantpointsunlimit/observer</class>
+                        <method>giantpointsTransactionIncrement</method>
+                    </giantpointsunlimit_observers>
+                </observers>
+            </giantpoints_transaction_increment>
+        </events>
+    </global>
+
+    
+</config>

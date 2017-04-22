@@ -1,0 +1,310 @@
+/*=================Referral Program Style=============*/
+.giantpoints-referral-container .box-referral {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 95%;
+}
+
+.giantpoints-referral-container .form-list .input-box {
+    width: 100%;
+}
+
+.box-referral {
+    margin-bottom: 10px;
+}
+
+.box-referral .box-title {
+    padding-left: 0 !important;
+}
+
+.box-referral .referral-url-box input {
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+}
+
+.box-referral .referral-url-box .input-box {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.box-referral .referral-url-box .url-icon {
+    background: url("images/referral-link-icon.png") no-repeat;
+}
+
+.box-referral .referral-url-box .code-icon {
+    background: url("images/referral-code-icon.png") no-repeat;
+}
+
+.box-referral .referral-url-box .email-icon {
+    background: url("images/referral-email-icon.png") no-repeat;
+}
+
+.box-referral .referral-url-box .referral-icon {
+    margin-top: 7px;
+    margin-left: 10px;
+    width: 5%;
+    float: left;
+    min-width: 25px;
+    height: 25px;
+    float: left;
+}
+
+.box-referral .referral-content {
+    margin-top: 30px;
+}
+
+.referral-url-box p.note {
+    /*background: url(images/note_bg.gif) 30px 6px no-repeat;*/
+    font-style: italic;
+    font-size: 11px;
+}
+
+.box-referral .referral-social {
+    height: 40px;
+}
+
+.box-referral .referral-social div {
+    float: left;
+}
+
+.box-referral .referral-twitter {
+    width: 80px;
+}
+
+.box-referral .referral-social .referral-channel {
+    margin-right: 10px;
+}
+
+.box-referral .giantpoints_recipient_list {
+    min-height: 100px;
+}
+
+.box-referral .giant-referral-message {
+    width: 100%;
+    min-height: 100px;
+}
+
+.giantpoints-send-mail-section .box-referral .button-set {
+    margin-top: 10px;
+}
+
+.box-referral .btn-send {
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 991px) {
+    .box-referral .send-friends-notice {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .box-referral .send-friends-notice {
+        display: none;
+    }
+
+    .box-referral .referral-icon {
+        display: none;
+    }
+}
+
+/*=====================Referral Style=======================*/
+#giantpoints_referral_container .wapper {
+    padding-bottom: 30px;
+}
+
+#giantpoints_referral_container .button-set {
+    height: 40px;
+}
+
+#giantpoints_referral_container .button-set button {
+    float: right;
+}
+
+#giantpoints_referral_container .referral-content {
+    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
+    background-color: #f3f3f3;
+    border-radius: 0.1875rem;
+    -webkit-border-radius: 0.1875rem;
+    -moz-border-radius: 0.1875rem;
+    padding: 1.5em;
+    text-align: center;
+}
+
+#giantpoints_referral_container .referral-content h6 {
+    margin-bottom: 15px;
+}
+
+#giantpoints_referral_container .referral-content ul {
+    display: inline-block;
+}
+
+#giantpoints_referral_container ul li a.icon-facebook {
+    -webkit-transition: background-color 0.1s linear;
+    -moz-transition: background-color 0.1s linear;
+    transition: background-color 0.1s linear;
+    border-bottom-width: 3px;
+    border-bottom-width: 0.1875rem;
+    border-bottom-style: solid;
+    padding-bottom: 9px;
+    padding-bottom: 0.5625rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    border-color: #263961;
+    background-color: #3B5998;
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+#giantpoints_referral_container ul li a.icon-twitter {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    border-bottom-width: 3px;
+    border-bottom-width: 0.1875rem;
+    border-bottom-style: solid;
+    padding-bottom: 9px;
+    padding-bottom: 0.5625rem;
+    -webkit-transition: background-color 0.1s linear;
+    -moz-transition: background-color 0.1s linear;
+    transition: background-color 0.1s linear;
+    background-color: #1DCAFF;
+    border-color: #009fd0;
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+#giantpoints_referral_container .referral-content button.invitation {
+    border-bottom-width: 3px;
+    border-bottom-width: 0.1875rem;
+    border-bottom-style: solid;
+    padding-bottom: 9px;
+    padding-bottom: 0.5625rem;
+    -webkit-transition: background-color 0.1s linear;
+    -moz-transition: background-color 0.1s linear;
+    transition: background-color 0.1s linear;
+    background-color: #79AD36;
+    border-color: #5e862a;
+}
+
+#giantpoints_referral_container .referral-content button.invitation:hover {
+    background-color: #6e9d31;
+}
+
+#giantpoints_referral_container .referral-content .invitation {
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding-top: 12px;
+    padding-top: 0.75rem;
+    padding-bottom: 12px;
+    padding-bottom: 0.75rem;
+    border-radius: 0.1875rem;
+    -webkit-border-radius: 0.1875rem;
+    -moz-border-radius: 0.1875rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 800;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    position: relative;
+    text-transform: uppercase;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+#giantpoints_referral_container ul li a.icon-gplus {
+    -webkit-transition: background-color 0.1s linear;
+    -moz-transition: background-color 0.1s linear;
+    transition: background-color 0.1s linear;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    border-bottom-width: 3px;
+    border-bottom-width: 0.1875rem;
+    border-bottom-style: solid;
+    padding-bottom: 9px;
+    padding-bottom: 0.5625rem;
+    border-color: #9b3022;
+    background-color: #D34836;
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+#giantpoints_referral_container ul li {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+#giantpoints_referral_container ul li a.icon-twitter:hover {
+    background-color: #00baf3;
+}
+
+#giantpoints_referral_container ul li a.icon-facebook:hover {
+    background-color: #30487b;
+}
+
+#giantpoints_referral_container ul li a.icon-gplus:hover {
+    background-color: #b83928;
+}
+
+#giantpoints_referral_container ul li a {
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding-top: 12px;
+    padding-top: 0.75rem;
+    padding-bottom: 12px;
+    padding-bottom: 0.75rem;
+    border-radius: 0.1875rem;
+    -webkit-border-radius: 0.1875rem;
+    -moz-border-radius: 0.1875rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 800;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    position: relative;
+    text-transform: uppercase;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    -webkit-transition: color 0.1s linear;
+    -moz-transition: color 0.1s linear;
+    transition: color 0.1s linear;
+    text-decoration: none;
+    width: 125px;
+    max-height: 50px;
+    min-height: 35px;
+    display: inline-flex;
+}
+
+.customer-referral-sharing {
+    margin-left: 25px;
+}
+
+.customer-referral-sharing img {
+    cursor: pointer;
+}
+
+.social-import * {float: left; margin-right: 2px}

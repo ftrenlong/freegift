@@ -1,0 +1,445 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <giantpoints translate="label" module="giantpoints">
+            <class>separator-top</class>
+            <label>Customer Behavior Earning Rules</label>
+            <tab>magegiant</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>299</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <group_signandnews translate="label">
+                    <label>Sign up and Subscribe to Newsletters</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <registration translate="label comment">
+                            <label>Points earned for signing up</label>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </registration>
+                        <newsletter translate="label comment">
+                            <label>Points earned for subscribing Newsletters</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </newsletter>
+                    </fields>
+                </group_signandnews>
+                <group_review_product>
+                    <label>Review Products</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <review translate="label comment">
+                            <label>Points earned for reviewing product</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </review>
+                        <review_limit translate="label comment">
+                            <label>Max points earned for reviewing products</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>points per customer per day</comment>
+                        </review_limit>
+                        <review_words translate="label comment">
+                            <label>Minimum number of words in the review</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Leave empty to avoid the limitation</comment>
+                        </review_words>
+                        <restriction translate="label">
+                            <label>Only those who purchased product can earn points</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>To prevent getting Points by spamming Review/Rating. Store owner can restrict that Only those who purchased product can earn points from Review/Rating</comment>
+                        </restriction>
+                    </fields>
+                </group_review_product>
+                <group_tagging_product>
+                    <label>Tag Products</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <tag translate="label comment">
+                            <label>Points earned for tagging a product</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tag>
+                        <tag_limit translate="label comment">
+                            <label>Max points earned for tagging products</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>points per customer per day</comment>
+                        </tag_limit>
+                    </fields>
+                </group_tagging_product>
+                <group_poll>
+                    <label>Take Polls</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+
+                        <poll translate="label comment">
+                            <label>Points earned for taking a poll</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </poll>
+                        <poll_status>
+                            <label>Status After Poll</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>giantpoints/actions_earning_status</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </poll_status>
+                        <poll_limit translate="label comment">
+                            <label>Max points earned for taking polls</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>points per customer per day</comment>
+                        </poll_limit>
+                    </fields>
+                </group_poll>
+                <group_customer_birthday>
+                    <label>Customer’s Birthday</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <birthday translate="label comment">
+                            <label>Points earned for customer’s birthday</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </birthday>
+                        <enable_email translate="label comment">
+                            <label>Enable email sent to Customers for their birthdays</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>30</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </enable_email>
+                        <identity translate="label">
+                            <label>Sender</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_identity</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </identity>
+                        <email_template translate="label comment">
+                            <label>Email template sent to customers for their birthdays</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_template>
+                    </fields>
+                </group_customer_birthday>
+                <group_fb_setting>
+                    <label>Like via Facebook</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>60</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <show_fb_like translate="label">
+                            <label>Show Facebook like button on frontend</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </show_fb_like>
+                        <show_fb_count translate="label">
+                            <label>Show Facebook like count on frontend</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>20</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </show_fb_count>
+                        <page_view translate="label comment">
+                            <label>Pages to display</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>25</sort_order>
+                            <source_model>giantpoints/system_config_source_pages</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </page_view>
+                        <fb_like_earn translate="label comment">
+                            <label>Points earned for Facebook like</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </fb_like_earn>
+                        <fb_like_earn_limit translate="label comment">
+                            <label>Max points earned for Facebook like</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>points per customer per day</comment>
+                        </fb_like_earn_limit>
+                        <minSecondsBetweenLikes translate="label comment">
+                            <label>Minimum interval between Likes</label>
+                            <comment><![CDATA[(seconds). This is the minimum interval between 2 different Facebook Likes or Share in order for Customers to be rewarded.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </minSecondsBetweenLikes>
+
+                    </fields>
+                </group_fb_setting>
+                <group_tw_setting>
+                    <label>Tweeting via Twitter</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>70</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <show_tw_tweet translate="label">
+                            <label>Show Twitter tweet button on frontend</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </show_tw_tweet>
+                        <show_tw_count translate="label">
+                            <label>Show Twitter tweet count on frontend</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>20</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </show_tw_count>
+                        <page_view translate="label comment">
+                            <label>Pages to display</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>25</sort_order>
+                            <source_model>giantpoints/system_config_source_pages</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </page_view>
+                        <tw_earn translate="label comment">
+                            <label>Points earned for tweeting on Twitter</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tw_earn>
+                        <tw_earn_limit translate="label comment">
+                            <label>Max points earned for tweeting on Twitter</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>points per customer per day</comment>
+                        </tw_earn_limit>
+                        <minSecondsBetweenTweets translate="label comment">
+                            <label>Minimum interval between tweets</label>
+                            <comment><![CDATA[(seconds). This is the minimum interval between two different Twitter tweets in order for Customers to be rewarded.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </minSecondsBetweenTweets>
+                    </fields>
+                </group_tw_setting>
+                <group_gg_setting>
+                    <label>+1 via Google+</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>80</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <show_gg_button translate="label">
+                            <label>Show Google+ button on frontend</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[You have to check your link at <a href="http://www.google.com/webmasters/tools/richsnippets" target="_blank"> Webmasters Tool</a> before using this function]]></comment>
+                        </show_gg_button>
+                        <show_gg_count translate="label">
+                            <label>Show Google+ count on frontend</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>20</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </show_gg_count>
+                        <page_view translate="label comment">
+                            <label>Pages to display</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>25</sort_order>
+                            <source_model>giantpoints/system_config_source_pages</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </page_view>
+                        <gg_earn translate="label comment">
+                            <label>Points earned for +1 via Google+</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </gg_earn>
+                        <gg_earn_limit translate="label comment">
+                            <label>Max points earned for +1 via Google+</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>points per customer per day</comment>
+                        </gg_earn_limit>
+                        <minSecondsBetweenPlusOnes translate="label comment">
+                            <label>Minimum interval between two +1s</label>
+                            <comment><![CDATA[(seconds). This is the minimum interval between two different +1s in order for Customers to be rewarded.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </minSecondsBetweenPlusOnes>
+                    </fields>
+                </group_gg_setting>
+                <purchase_share translate="label">
+                    <label>Purchase Rewards</label>
+                    <sort_order>90</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label comment">
+                            <label>Purchase Share Feature</label>
+                            <comment><![CDATA[If enabled, customers will have the ability to share their purchase with
+                                their friends on social networks, as configured below]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <enable_facebook_share translate="label comment">
+                            <label>Purchase Share on Facebook</label>
+                            <comment><![CDATA[If enabled, customers will have the option of sharing their purchase on
+                                Facebook.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_facebook_share>
+                        <enable_twitter_tweet translate="label comment">
+                            <label>Purchase Share on Twitter</label>
+                            <comment><![CDATA[If enabled, customers will have the option of sharing their purchase on
+                                Twitter.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_twitter_tweet>
+                    </fields>
+                </purchase_share>
+            </groups>
+        </giantpoints>
+    </sections>
+</config>

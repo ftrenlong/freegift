@@ -1,0 +1,28 @@
+/*
+* 	iMedia Inc.
+*/
+
+#rewardpoint .input-text{
+float:left;
+border-radius: 0;
+height: 30px;
+margin: 4px 10px 0 0;
+width: 100px;	
+}
+
+#rewardpoint .button-wrapper{
+float: left;
+}
+
+#rewardpoint label{
+float:left;
+font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;
+font-size: 12px;
+font-weight: 400;
+text-align: left;
+text-transform: uppercase;
+min-width: 90px;
+display: inline-block;
+margin-right: 10px;
+line-height:32px;
+}

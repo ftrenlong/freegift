@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Argoworks_Product>
+			<version>1.0.0</version>
+		</Argoworks_Product>
+	</modules>
+	<global>
+		<helpers>
+			<argoworks_product>
+				<class>Argoworks_Product_Helper</class>
+			</argoworks_product>
+		</helpers>
+		<models>
+			<argoworks_product>
+				<class>Argoworks_Product_Model</class>
+			</argoworks_product>
+		</models>
+		<blocks>
+			<argoworks_product>
+				<class>Argoworks_Product_Block</class>
+			</argoworks_product>
+		</blocks>
+	</global>
+</config>

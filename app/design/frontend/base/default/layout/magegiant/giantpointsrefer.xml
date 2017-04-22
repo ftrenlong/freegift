@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageGiant
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MageGiant.com license that is
+ * available through the world-wide-web at this URL:
+ * http://magegiant.com/license-agreement/
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    MageGiant
+ * @package     MageGiant_GiantPointsRefer
+ * @copyright   Copyright (c) 2014 MageGiant (http://magegiant.com/)
+ * @license     http://magegiant.com/license-agreement/
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <!-- update layout for all frontend page -->
+    </default>
+    <giantpointsrefer_referral_gmail>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="giantpointsrefer/refer_gmail" name="giantpointsrefer_refer_gmail" template="magegiant/giantpointsrefer/refer/contacts.phtml" />
+        </reference>
+    </giantpointsrefer_referral_gmail>
+    <giantpointsrefer_referral_yahoo>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="giantpointsrefer/refer_yahoo" name="giantpointsrefer_refer_yahoo" template="magegiant/giantpointsrefer/refer/contacts.phtml" />
+        </reference>
+    </giantpointsrefer_referral_yahoo>
+    <giantpointrefer_earning>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/magegiant/giantpointsrefer/style.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="behavior.social.earning">
+            <block type="giantpointsrefer/customer_referral_sharing" name="referral.sharing" as="referral_program" before="-" template="magegiant/giantpointsrefer/customer/referral/sharing.phtml">
+                <block type="giantpointsrefer/customer_referral_sharing_content" name="referral.sharing.content" as="sharing_content"
+                       template="magegiant/giantpointsrefer/customer/referral/sharing/content.phtml"
+                        />
+            </block>
+        </reference>
+    </giantpointrefer_earning>
+    <cms_index_index>
+        <update handle="giantpointrefer_earning"/>
+    </cms_index_index>
+    <catalog_category_default>
+        <update handle="giantpointrefer_earning"/>
+    </catalog_category_default>
+    <catalog_category_layered>
+        <update handle="giantpointrefer_earning"/>
+    </catalog_category_layered>
+    <catalog_product_view>
+        <update handle="giantpointbhv_social_earning"/>
+    </catalog_product_view>
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="giantpoints" ifconfig="giantpoints/referral_system_configuration/enable">
+                <name>giantpoints_referral</name>
+                <path>giantpointsrefer/referral</path>
+                <label>My Referrals</label>
+            </action>
+        </reference>
+    </customer_account>
+    <giantpointsrefer_referral_index>
+        <update handle="customer_account"/>
+        <reference name="head">
+            <action method="addCss">
+                <script>css/magegiant/giantpoints/grid-magegiant.css</script>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/magegiant/giantpointsrefer/style.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="giantpointsrefer/customer_referral_general" name="giantpoints.referral.general">
+                <block type="giantpointsrefer/customer_referral_url" name="giantpoints.referral.url" as="giantpointsrefer_referral_url" template="magegiant/giantpointsrefer/customer/referral/url.phtml"/>
+                <block type="giantpointsrefer/customer_referral_social" name="giantpoints.referral.social" after="giantpointsrefer_referral_url" as="giantpointsrefer_referral_social" template="magegiant/giantpointsrefer/customer/referral/social.phtml"/>
+                <block type="giantpointsrefer/customer_referral_mail" name="giantpoints.referral.mail" after="giantpointsrefer_referral_social" as="giantpointsrefer_referral_mail" template="magegiant/giantpointsrefer/customer/referral/mail.phtml"/>
+            </block>
+        </reference>
+    </giantpointsrefer_referral_index>
+    <giantpointsrefer_referral_invitation>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="giantpointsrefer/customer_referral_invitation" name="giantpoints.referral.list" template="magegiant/giantpointsrefer/customer/referral/invitation.phtml">
+                <action method="setTitle" translate="title" module="giantpoints">
+                    <title>My Invitation</title>
+                </action>
+            </block>
+        </reference>
+    </giantpointsrefer_referral_invitation>
+    <customer_account_create>
+        <reference name="customer_form_register">
+            <reference name="form.additional.info">
+                <block type="giantpointsrefer/customer_referral_register_field" name="customer.referral.register.field" template="magegiant/giantpointsrefer/customer/referral/register/field.phtml"/>
+            </reference>
+        </reference>
+    </customer_account_create>
+</layout>

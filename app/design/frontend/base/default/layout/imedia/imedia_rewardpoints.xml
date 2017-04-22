@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<layout>
+<!--
+Customer account home dashboard layout
+-->
+<default>
+	<reference name="head">
+			<action method="addCss" ><stylesheet>imedia/im_rewards.css</stylesheet></action>
+	</reference>
+</default>
+	<imedia_rewardpoints_index_index>
+           <reference name="content">
+		        <block type="imedia_rewardpoints/reward_points" name="myrewardpoints">
+				<action method="setTemplate" ifconfig="rewardpoints/rewardpoints/enabled">
+				<template>imedia/rewardform.phtml</template></action>
+				</block>
+           </reference>		   
+      </imedia_rewardpoints_index_index>
+	
+	<checkout_cart_index>
+		  <reference name="checkout.cart">
+			  <block type="core/text_list" name="coupon.and.discount" as="coupon" >
+				<block type="imedia_rewardpoints/reward_points" name="myrewardpoints">
+				<action method="setTemplate" ifconfig="rewardpoints/rewardpoints/enabled">
+				<template>imedia/rewardform.phtml</template></action>
+				</block>
+				<action method="insert"><block>checkout.cart.coupon</block></action>
+			  </block>
+		  </reference>
+     </checkout_cart_index>
+	 
+	 <customer_account_index>
+		<reference name="customer_account_dashboard">
+			<action method="setTemplate" ifconfig="rewardpoints/rewardpoints/enabled">
+			<template>rewardpoints/my_dashboard.phtml</template>
+			</action>
+			<block type="core/template"	name="customer_account_points"	as="points"	template="rewardpoints/dashboard_points.phtml"/>
+		</reference>
+	</customer_account_index>
+	
+	
+	<sales_email_order_items>
+        <reference name="order_totals">
+           <block type="imedia_rewardpoints/sales_order_total" name="imedia.sales.order.total" />
+        </reference>
+    </sales_email_order_items>
+	
+	<sales_email_order_invoice_items>
+        <reference name="invoice_totals">
+            <block type="imedia_rewardpoints/sales_order_total" name="imedia.sales.order.total" />
+        </reference>
+    </sales_email_order_invoice_items>
+	
+	
+	<sales_order_view>
+        <reference name="order_totals">
+            <block type="imedia_rewardpoints/sales_order_total" name="imedia.sales.order.total" />
+        </reference>
+    </sales_order_view>
+    <sales_order_print>
+        <reference name="order_totals">
+            <block type="imedia_rewardpoints/sales_order_total" name="imedia.sales.order.total" />
+        </reference>
+    </sales_order_print>
+    <sales_order_invoice>
+        <reference name="invoice_totals">
+            <block type="imedia_rewardpoints/sales_order_total" name="imedia.sales.order.total" />
+        </reference>
+    </sales_order_invoice>
+    <sales_order_printinvoice>
+        <reference name="invoice_totals">
+            <block type="imedia_rewardpoints/sales_order_total" name="imedia.sales.order.total" />
+        </reference>
+    </sales_order_printinvoice>
+    <sales_order_creditmemo>
+        <reference name="creditmemo_totals">
+            <block type="imedia_rewardpoints/sales_order_total" name="imedia.sales.order.total" />
+        </reference>
+    </sales_order_creditmemo>
+    <sales_order_printcreditmemo>
+        <reference name="creditmemo_totals">
+            <block type="imedia_rewardpoints/sales_order_total" name="imedia.sales.order.total" />
+        </reference>
+    </sales_order_printcreditmemo>
+    <sales_email_order_creditmemo_items>
+        <reference name="creditmemo_totals">
+            <block type="imedia_rewardpoints/sales_order_total" name="imedia.sales.order.total" />
+        </reference>
+    </sales_email_order_creditmemo_items>
+
+
+
+</layout>

@@ -1,0 +1,67 @@
+<script type="text/javascript">
+    var processPurchaseShare = '<?php echo $this->getProcessingUrl(); ?>';
+
+    Event.observe(document, 'dom:loaded', function () {
+        // if GiantPointsSocialPurchaseShare is not defined, exit
+        if (typeof GiantPointsSocialPurchaseShare === 'undefined') {
+            return this;
+        }
+
+        /**
+         * FB Share
+         */
+        window.oldFbPurchaseAsyncInit = window.fbAsyncInit || function () {
+        };
+//        window.fbAsyncInit = function () {
+//            window.oldFbPurchaseAsyncInit();
+            Event.observe(document, 'facebook_product_share:response', function (event) {
+                    if (event.memo.hasOwnProperty('object_id')) {
+                        if (typeof processPurchaseShare !== 'undefined') {
+                            var widgetsElement = event.target.up('.giantpoints-social-widgets');
+                            var notificationElement = '.giantpoints-notification' + widgetsElement.className.split(' ')[1];
+                            var data = window['giantpointsSocialWidgetHover' + widgetsElement.className.split(' ')[1]].data;
+                            var args = {
+                                rewardUrl: processPurchaseShare, notificationElement: notificationElement, action: 'facebook'
+                            };
+                            Object.extend(args, data);
+                            var purchaseShareReward = new GiantPointsSocialPurchaseShare(args);
+                            purchaseShareReward.onShare();
+                        }
+                    }
+                }
+            );
+
+//        };
+
+        /**
+         * Twitter Tweet
+         */
+        if (typeof twttr !== 'undefined') {
+            twttr.ready(function (twttr) {
+                twttr.events.bind('tweet', function (event) {
+                        if (event.target.up().hasClassName('giantpoints-social-purchase')) {
+                            if (typeof processPurchaseShare !== 'undefined') {
+                                var widgetsElement = event.target.up('.giantpoints-social-widgets');
+                                var notificationElement = '.giantpoints-notification' + widgetsElement.className.split(" ")[1];
+                                var data = window['giantpointsSocialWidgetHover' + widgetsElement.className.split(" ")[1]].data;
+                                var args = {
+                                    rewardUrl: processPurchaseShare,
+                                    notificationElement: notificationElement,
+                                    action: 'twitter'
+                                };
+                                Object.extend(args, data);
+                                console.log(args)
+                                var purchaseShareReward = new GiantPointsSocialPurchaseShare(args);
+                                purchaseShareReward.onShare()
+                            }
+                            return
+                        }
+                        return
+                    }
+                );
+
+            });
+        }
+    });
+
+</script>

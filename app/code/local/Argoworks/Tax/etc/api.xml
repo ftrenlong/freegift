@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<config>
+	<api>
+		<resources>
+			<argoworks_tax translate="title" module="argoworks_tax">
+				<model>argoworks_tax/api</model>
+				<title>Tax API</title>
+				<acl>argoworks_tax</acl>
+				<methods>
+					<listProductTaxClasses translate="title" module="argoworks_tax">
+						<title>Retrieve list of product tax classes</title>
+						<acl>argoworks_tax/listProductTaxClasses</acl>
+					</listProductTaxClasses>
+					<listCustomerTaxClasses translate="title" module="argoworks_tax">
+						<title>Retrieve list of customer tax classes</title>
+						<acl>argoworks_tax/listCustomerTaxClasses</acl>
+					</listCustomerTaxClasses>
+					<addProductTaxClass translate="title" module="argoworks_tax">
+						<title>Add product tax classes</title>
+						<acl>argoworks_tax/addProductTaxClass</acl>
+					</addProductTaxClass>
+					<addCustomerTaxClass translate="title" module="argoworks_tax">
+						<title>Add customer tax classes</title>
+						<acl>argoworks_tax/addCustomerTaxClass</acl>
+					</addCustomerTaxClass>
+					<getProductTaxClassByName translate="title" module="argoworks_tax">
+						<title>Get product tax class by name</title>
+						<acl>argoworks_tax/getProductTaxClassByName</acl>
+					</getProductTaxClassByName>
+					<getCustomerTaxClassByName translate="title" module="argoworks_tax">
+						<title>Get customer tax class by name</title>
+						<acl>argoworks_tax/getCustomerTaxClassByName</acl>
+					</getCustomerTaxClassByName>
+					<getAttributeGroup translate="title" module="argoworks_tax">
+						<title>Get Attribute Group</title>
+						<acl>argoworks_tax/getAttributeGroup</acl>
+					</getAttributeGroup>
+				</methods>
+				<faults module="argoworks_tax">
+					<data_invalid>
+						<code>102</code>
+						<message>Invalid data given. Details in error message.</message>
+					</data_invalid>
+				</faults>
+			</argoworks_tax>
+		</resources>
+		<resources_alias>
+			<argoworks_tax>argoworks_tax</argoworks_tax>
+		</resources_alias>
+		<acl>
+			<resources>
+				<argoworks_tax translate="title" module="argoworks_tax">
+						<title>Tax</title>
+						<listProductTaxClasses translate="title" module="argoworks_tax">
+							<title>View All Product Tax Classes</title>
+						</listProductTaxClasses>
+						<listCustomerTaxClasses translate="title" module="argoworks_tax">
+							<title>View All Customer Tax Classes</title>
+						</listCustomerTaxClasses>
+						<addProductTaxClass translate="title" module="argoworks_tax">
+							<title>Add product tax class</title>
+						</addProductTaxClass>
+						<addCustomerTaxClass translate="title" module="argoworks_tax">
+							<title>Add customer tax class</title>
+						</addCustomerTaxClass>
+						<getProductTaxClassByName translate="title" module="argoworks_tax">
+							<title>Get product tax class by name</title>
+						</getProductTaxClassByName>
+						<getCustomerTaxClassByName translate="title" module="argoworks_tax">
+							<title>Get customer tax class by name</title>
+						</getCustomerTaxClassByName>
+						<getAttributeGroup translate="title" module="argoworks_tax">
+							<title>Get Attribute Group</title>
+						</getAttributeGroup>
+				</argoworks_tax>
+			</resources>
+		</acl>
+	</api>
+</config>

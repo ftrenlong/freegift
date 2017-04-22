@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config>
+	<api>
+		<resources>
+			<argoworks_product translate="title" module="argoworks_product">
+				<model>argoworks_product/api</model>
+				<title>Product API</title>
+				<acl>argoworks_product</acl>
+				<methods>
+					<getProductPriceChanges translate="title" module="argoworks_product">
+						<title>Retrieve list configuable product price changes</title>
+						<acl>argoworks_product/getProductPriceChanges</acl>
+					</getProductPriceChanges>
+					<reindexAll translate="title" module="argoworks_product">
+						<title>Reindex All Indexes</title>
+						<acl>argoworks_product/reindexAll</acl>
+					</reindexAll>
+				</methods>
+				<faults module="argoworks_product">
+					<data_invalid>
+						<code>102</code>
+						<message>Invalid data given. Details in error message.</message>
+					</data_invalid>
+				</faults>
+			</argoworks_product>
+		</resources>
+		<resources_alias>
+			<argoworks_product>argoworks_product</argoworks_product>
+		</resources_alias>
+		<acl>
+			<resources>
+				<argoworks_product translate="title" module="argoworks_product">
+						<title>Argoworks Product</title>
+						<getProductPriceChanges translate="title" module="argoworks_product">
+							<title>Get Product Price Changes</title>
+						</getProductPriceChanges>
+						<reindexAll translate="title" module="argoworks_product">
+							<title>Reindex All Indexes</title>
+						</reindexAll>
+				</argoworks_product>
+			</resources>
+		</acl>
+	</api>
+</config>

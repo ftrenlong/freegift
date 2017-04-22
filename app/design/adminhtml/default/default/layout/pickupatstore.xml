@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_pickupatstore_order_grid>
+        <update handle="formkey"/>
+        <block type="pickupatstore/adminhtml_manage_edit_tab_orders" name="pickupatstore_order.grid" output="toHtml"></block>
+    </adminhtml_pickupatstore_order_grid>
+</layout>

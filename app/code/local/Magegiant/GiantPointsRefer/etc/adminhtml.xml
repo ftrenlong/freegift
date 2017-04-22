@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magegiant
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the magegiant.com license that is
+ * available through the world-wide-web at this URL:
+ * http://magegiant.com/license-agreement/
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    Magegiant
+ * @package     Magegiant_GiantPointsRefer
+ * @copyright   Copyright (c) 2014 Magegiant (http://magegiant.com/)
+ * @license     http://magegiant.com/license-agreement/
+ */
+-->
+<config>
+    <menu>
+        <giantpoints module="giantpointsrefer" translate="title">
+<!--            <children>
+                <referral>
+                    <title>Customer Referrals</title>
+                    <sort_order>30</sort_order>
+                    <children>
+                        <rule>
+                            <title>Manage Rules</title>
+                            <sort_order>1</sort_order>
+                            <action>adminhtml/giantpoints_refer_salesrule</action>
+                        </rule>
+                        <config>
+                            <title>Configuration</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/giantpoints_refer_config</action>
+                        </config>
+                        <history>
+                            <title>Invitation History</title>
+                            <sort_order>20</sort_order>
+                            <action>adminhtml/giantpoints_refer_invitation</action>
+                        </history>
+                    </children>
+                </referral>
+            </children>-->
+        </giantpoints>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <giantpoints module="giantpointsrefer" translate="title">
+                        <children>
+                            <referral>
+                                <title>Customer Referrals</title>
+                                <sort_order>30</sort_order>
+                                <children>
+                                    <config>
+                                        <title>Configuration</title>
+                                        <sort_order>10</sort_order>
+                                    </config>
+                                    <history>
+                                        <title>Invitation History</title>
+                                        <sort_order>20</sort_order>
+                                    </history>
+                                </children>
+                            </referral>
+                        </children>
+                    </giantpoints>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

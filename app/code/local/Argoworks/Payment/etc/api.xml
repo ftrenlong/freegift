@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+	<api>
+		<resources>
+			<argoworks_payment translate="title" module="argoworks_payment">
+				<model>argoworks_payment/api</model>
+				<title>Payment Methods API</title>
+				<acl>argoworks_payment</acl>
+				<methods>
+					<listPaymentMethods translate="title" module="argoworks_payment">
+						<title>Retrieve list of active payment methods</title>
+						<acl>argoworks_payment/listPaymentMethods</acl>
+					</listPaymentMethods>
+				</methods>
+				<faults module="argoworks_payment">
+					<data_invalid>
+						<code>102</code>
+						<message>Invalid data given. Details in error message.</message>
+					</data_invalid>
+				</faults>
+			</argoworks_payment>
+		</resources>
+		<resources_alias>
+			<argoworks_payment>argoworks_payment</argoworks_payment>
+		</resources_alias>
+		<acl>
+			<resources>
+				<argoworks_payment translate="title" module="argoworks_payment">
+						<title>Payment Methods</title>
+						<listPaymentMethods translate="title" module="argoworks_payment">
+							<title>View All Active Payment Methods</title>
+						</listPaymentMethods>
+				</argoworks_payment>
+			</resources>
+		</acl>
+	</api>
+</config>

@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <giantpoints translate="label" module="giantpoints">
+            <class>separator-top</class>
+            <label>Customer Behavior Earning Rules</label>
+            <tab>magegiant</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>299</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <referral_system_configuration translate="label">
+                    <label>Referral system</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>20</sort_order>
+                    <fields>
+                        <general_referral_separator translate="label comment">
+                            <label>General configuration</label>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>giantpoints/adminhtml_system_config_form_field_separator</frontend_model>
+                            <margin_top>10px</margin_top>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </general_referral_separator>
+                        <page_view translate="label comment">
+                            <label>Pages to display</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>20</sort_order>
+                            <source_model>giantpoints/system_config_source_pages</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </page_view>
+                        <points_for_order translate="label">
+                            <label><![CDATA[Points awarded to customers]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>giantpoints/system_config_source_pointForOrder</source_model>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </points_for_order>
+                        <email_template translate="label">
+                            <label>Invitation e-mail</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>22</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_template>
+                        <affiliate_redirect_url translate="label comment">
+                            <label>Affiliate Redirect Path</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[This is the URL or path that will redirect the visitor to after it registers the referral into the session. The default value is blank, which redirects the visitor to the home page.]]>
+                            </comment>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </affiliate_redirect_url>
+                        <calculator_referral_separator translate="label comment">
+                            <label>Customer earning configuaration</label>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>giantpoints/adminhtml_system_config_form_field_separator</frontend_model>
+                            <margin_top>10px</margin_top>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </calculator_referral_separator>
+                        <points_for_referral_signup translate="label">
+                            <label><![CDATA[Points awarded to customers for their referral's signup]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </points_for_referral_signup>
+                        <referral_discount_type translate="label">
+                            <label>Discount type for referral</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>giantpoints/system_config_source_discountType</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </referral_discount_type>
+                        <points_commission_fix translate="label">
+                            <label><![CDATA[Points awarded to customers for their referral's purchases (fixed points amount)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <referral_discount_type>1</referral_discount_type>
+                            </depends>
+                        </points_commission_fix>
+                        <points_commission_percent translate="label">
+                            <label><![CDATA[Points awarded to customers for their referral's purchases (% from purchase sum)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <referral_discount_type>2</referral_discount_type>
+                            </depends>
+                        </points_commission_percent>
+                        <referral_conversion_rate translate="label comment">
+                            <label>Conversion Rate</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>giantpoints/adminhtml_system_config_form_field_rate</frontend_model>
+                            <margin_top>10px</margin_top>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                            <depends>
+                                <referral_discount_type>2</referral_discount_type>
+                            </depends>
+                        </referral_conversion_rate>
+                        <points_commission_day_limit translate="label">
+                            <label>Day limit for points for inviting a friend</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </points_commission_day_limit>
+                        <calculator_customer_referral_separator translate="label comment">
+                            <label>Referrals eanring configuaration</label>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>giantpoints/adminhtml_system_config_form_field_separator</frontend_model>
+                            <margin_top>10px</margin_top>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </calculator_customer_referral_separator>
+                        <invited_discount_type translate="label">
+                            <label>Discount type for referrals</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>giantpoints/system_config_source_discountType</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </invited_discount_type>
+                        <points_for_order_fixed translate="label">
+                            <label>
+                                <![CDATA[Points awarded to referrals (fixed points amount)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <invited_discount_type>1</invited_discount_type>
+                            </depends>
+                        </points_for_order_fixed>
+                        <points_for_order_percent translate="label">
+                            <label>
+                                <![CDATA[Points awarded to referrals (% from purchase sum)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <invited_discount_type>2</invited_discount_type>
+                            </depends>
+                        </points_for_order_percent>
+                        <invited_conversion_rate translate="label comment">
+                            <label>Conversion Rate</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>giantpoints/adminhtml_system_config_form_field_rate</frontend_model>
+                            <margin_top>10px</margin_top>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                            <depends>
+                                <invited_discount_type>2</invited_discount_type>
+                            </depends>
+                        </invited_conversion_rate>
+                    </fields>
+                </referral_system_configuration>
+            </groups>
+        </giantpoints>
+    </sections>
+</config>

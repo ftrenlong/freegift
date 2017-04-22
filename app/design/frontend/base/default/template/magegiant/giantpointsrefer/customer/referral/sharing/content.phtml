@@ -1,0 +1,93 @@
+<?php
+/**
+ * Magegiant
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magegiant.com license that is
+ * available through the world-wide-web at this URL:
+ * https://magegiant.com/license-agreement/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magegiant
+ * @package     Magegiant_GiantPoints
+ * @copyright   Copyright (c) 2014 Magegiant (https://magegiant.com/)
+ * @license     https://magegiant.com/license-agreement/
+ */
+?>
+<div id="giantpoints_referral_container">
+    <div class="wapper">
+        <div class="referral-content">
+            <div class="box-head">
+                <h2 class="box-title"><?php echo $this->__('Referral policy') ?>
+                </h2>
+            </div>
+            <dl class="box-content">
+                <dt>
+                    <b>
+                        <?php echo $this->__('Share your referring link with your friends and earn commissions.') ?>
+                    </b>
+                </dt>
+                <dd>
+                    <?php if ($this->getPointsCommissionInfo()): ?>
+                        <?php echo $this->getPointsCommissionInfo(); ?>
+                    <?php endif; ?>
+                </dd>
+                <dd>
+                    <?php if ($this->getPointsInvitedInfo()): ?>
+                        <?php echo $this->getPointsInvitedInfo(); ?>
+                    <?php endif; ?>
+                </dd>
+            </dl>
+        </div>
+        <?php if ($this->getCustomer() && $this->getCustomer()->getId()): ?>
+            <div class="referral-content">
+                <h6>
+                    <strong><?php echo $this->__('Enjoyed this post?') ?></strong> <?php echo $this->__('Spread it to your friends!') ?>
+                </h6>
+                <ul>
+                    <li>
+                        <a class="icon-facebook"
+                           href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $this->getShareUrl() ?>"
+                           title="Facebook"
+                           onclick="javascript:window.open(this.href,'','width=626,height=436,left='+((screen.width-626)/2)+',top=200,resizable=yes,scrollbars=yes');return false;">
+                            <img src="<?php echo $this->getFacebookIcon(); ?>"/>Share</a>
+                    </li>
+                    <li>
+                        <a class="icon-twitter"
+                           href="https://twitter.com/share?url=<?php echo $this->getShareUrl() ?>&text=<?php echo $this->getTweetText() ?>"
+                           title="Twitter"
+                           onclick="javascript:window.open(this.href,'','width=550,height=450,left='+((screen.width-550)/2)+',top=200,resizable=yes,scrollbars=yes');return false;">
+                            <img src="<?php echo $this->getTwitterIcon(); ?>"/>Tweet</a>
+                    </li>
+                    <li>
+                        <a class="icon-gplus"
+                           href="https://plus.google.com/share?url=<?php echo $this->getShareUrl() ?>"
+                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                            <img src="<?php echo $this->getGoogleIcon(); ?>"/>+1
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="referral-content">
+                <button class="invitation" type="button"
+                        onclick="location.href='<?php echo $this->getUrl('giantpointsrefer/referral/index') ?>'"
+                        title="<?php echo $this->__('Send Invitation') ?>">
+                    <?php echo $this->__('Send Invitation') ?>
+                </button>
+            </div>
+        <?php else: ?>
+            <div class="referral-content">
+                <button class="invitation" type="button"
+                        onclick="location.href='<?php echo $this->getUrl('customer/account/login') ?>'"
+                        title="<?php echo $this->__('Login Now') ?>">
+                    <?php echo $this->__('Login Now') ?>
+                </button>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>

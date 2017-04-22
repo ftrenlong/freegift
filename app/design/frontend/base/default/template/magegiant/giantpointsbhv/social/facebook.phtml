@@ -1,0 +1,73 @@
+<?php
+/**
+ * Magegiant
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magegiant.com license that is
+ * available through the world-wide-web at this URL:
+ * https://magegiant.com/license-agreement/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magegiant
+ * @package     Magegiant_GiantPoints
+ * @copyright   Copyright (c) 2014 Magegiant (https://magegiant.com/)
+ * @license     https://magegiant.com/license-agreement/
+ */
+?>
+<!--================Begin Facebook Earning================-->
+<div class="facebook-earning">
+    <div id="fb-root"></div>
+    <script>
+        //<![CDATA[
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        //]]>
+
+    </script>
+    <?php if ($this->showButtonCount()): ?>
+        <div class="fb-like" data-href="<?php echo $this->getCurrentUrl() ?>" data-layout="button_count"
+             data-action="like" data-show-faces="true" data-share="false"></div>
+    <?php else: ?>
+        <div class="fb-like" data-href="<?php echo $this->getCurrentUrl() ?>" data-layout="button"
+             data-action="like" data-show-faces="true" data-share="false"></div>
+    <?php endif; ?>
+</div>
+
+<script>
+    //<![CDATA[
+    window.oldFbAsyncInit = window.fbAsyncInit || function () {
+    };
+    window.fbAsyncInit = function () {
+        FB.Event.subscribe('edge.create',
+            function (response) {
+                facebookEarnAjax('like', false, response);
+            }
+        );
+        FB.Event.subscribe('edge.remove',
+            function (response) {
+                facebookEarnAjax('unlike', false, response);
+            }
+        );
+    };
+    function facebookEarnAjax(action, remove, response) {
+        var defaultMessage = '<?php echo $this->getRewardEarnInfo() ?>';
+        var url = '<?php echo $this->getUrl('giantpointsbhv/social_facebook/process') ?>';
+        var parameters = { action: action, liked_url: response};
+        new SocialEarnAjax(url, parameters, defaultMessage, $('social_ajax_loader'), $('social_earn_info'));
+    }
+    //]]>
+
+
+</script>
+<!--==============End Facebook Earning===============-->

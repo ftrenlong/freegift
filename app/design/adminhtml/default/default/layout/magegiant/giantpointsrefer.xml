@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageGiant
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MageGiant.com license that is
+ * available through the world-wide-web at this URL:
+ * http://magegiant.com/license-agreement/
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    MageGiant
+ * @package     MageGiant_GiantPointsRefer
+ * @copyright   Copyright (c) 2014 MageGiant (http://magegiant.com/)
+ * @license     http://magegiant.com/license-agreement/
+ */
+-->
+<layout version="0.1.0">
+    <!--Referral earning-->
+    <adminhtml_giantpoints_refer_config_index>
+        <reference name="left">
+            <block type="giantpoints/adminhtml_system_config_switcher" name="adminhtml.system.config.switcher" before="-"/>
+        </reference>
+    </adminhtml_giantpoints_refer_config_index>
+    <adminhtml_giantpoints_refer_invitation_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="giantpointsrefer/adminhtml_invitation_grid" name="giant_invitation_grid"/>
+        </block>
+    </adminhtml_giantpoints_refer_invitation_grid>
+    <adminhtml_giantpoints_refer_invitation_index>
+        <reference name="content">
+            <block type="giantpointsrefer/adminhtml_invitation" name="giant_invitation"/>
+        </reference>
+    </adminhtml_giantpoints_refer_invitation_index>
+
+    <adminhtml_giantpoints_refer_salesrule_index>
+        <reference name="content">
+            <block type="giantpointsrefer/adminhtml_salesrule" name="giant_refer_salesrule"/>
+        </reference>
+    </adminhtml_giantpoints_refer_salesrule_index>
+
+    <!--/Referral earning-->
+</layout>

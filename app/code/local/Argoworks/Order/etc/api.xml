@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config>
+	<api>
+		<resources>
+			<argoworks_order translate="title" module="argoworks_order">
+				<model>argoworks_order/api</model>
+				<title>Argoworks Order API</title>
+				<acl>argoworks_order</acl>
+				<methods>
+					<createCustomer translate="title" module="argoworks_order">
+						<title>Create Customer</title>
+						<acl>argoworks_order/createCustomer</acl>
+						<method>createCustomer</method>
+					</createCustomer>
+					<createOrder translate="title" module="argoworks_order">
+						<title>Create Order</title>
+						<acl>argoworks_order/createOrder</acl>
+						<method>createOrder</method>
+					</createOrder>
+				</methods>
+				<faults module="argoworks_order">
+					<data_invalid>
+						<code>102</code>
+						<message>Invalid data given. Details in error message.</message>
+					</data_invalid>
+				</faults>
+			</argoworks_order>
+		</resources>
+		<resources_alias>
+			<argoworks_order>argoworks_order</argoworks_order>
+		</resources_alias>
+		<acl>
+			<resources>
+				<argoworks_order translate="title" module="argoworks_order">
+					<title>Argoworks Order API</title>
+					<createCustomer translate="title" module="argoworks_order">
+						<title>Create Customer</title>
+					</createCustomer>
+					<createOrder translate="title" module="argoworks_order">
+						<title>Create Order</title>
+					</createOrder>
+				</argoworks_order>
+			</resources>
+		</acl>
+	</api>
+</config>

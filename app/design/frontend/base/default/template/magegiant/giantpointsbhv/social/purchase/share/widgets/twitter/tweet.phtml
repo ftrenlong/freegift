@@ -1,0 +1,33 @@
+<li>
+    <div class="twitter-earning giantpoints-social-purchase">
+        <?php if ($this->showButtonCount()): ?>
+            <a href="https://twitter.com/share" class="twitter-share-button giantpoints-social-earning" data-lang="en"
+               data-url="<?php echo $this->getTweetedUrl() ?>"
+               data-text="<?php echo $this->getProduct()->getName() ?>"
+                >Tweet</a>
+
+        <?php else: ?>
+            <a class="twitter-share-button giantpoints-social-earning" href="https://twitter.com/share"
+               data-url="<?php echo $this->getTweetedUrl() ?>"
+               data-text="<?php echo $this->getProduct()->getName() ?>"
+               data-lang="en" data-count="none">Tweet</a>
+        <?php endif; ?>
+    </div>
+</li>
+<script type="text/javascript">
+    Event.observe(document, "dom:loaded", function () {
+        if (typeof window.twttr == 'undefined') {
+            window.twttr = (function (d, s, id) {
+                var t, js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+                return window.twttr || (t = { _e: [], ready: function (f) {
+                    t._e.push(f)
+                } });
+            }(document, "script", "twitter-wjs"));
+        }
+    });
+</script>

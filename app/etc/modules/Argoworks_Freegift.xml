@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Argoworks
+ * @package    Argoworks_Freegift
+ * @author     ModuleCreator
+ */
+ -->
+<config>
+    <modules>
+        <Argoworks_Freegift>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Argoworks_Freegift>
+    </modules>
+</config>

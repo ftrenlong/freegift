@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Argoworks_Tax>
+			<version>1.0.0</version>
+		</Argoworks_Tax>
+	</modules>
+	<global>
+		<helpers>
+			<argoworks_tax>
+				<class>Argoworks_Tax_Helper</class>
+			</argoworks_tax>
+		</helpers>
+		<models>
+			<argoworks_tax>
+				<class>Argoworks_Tax_Model</class>
+			</argoworks_tax>
+		</models>
+		<blocks>
+			<argoworks_tax>
+				<class>Argoworks_Tax_Block</class>
+			</argoworks_tax>
+		</blocks>
+	</global>
+</config>

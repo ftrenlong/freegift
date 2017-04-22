@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Argoworks_Freegift>
+            <version>1.0.0</version>
+        </Argoworks_Freegift>
+    </modules> 
+    <frontend>  
+        <routers>
+            <freegift>
+                <use>standard</use>
+                <args>
+                    <module>Argoworks_Freegift</module>
+                    <frontName>freegift</frontName>
+                </args>
+            </freegift>
+        </routers>
+         <layout>
+            <updates>
+                <freegift>
+                    <file>freegift/freegift.xml</file>
+                </freegift>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <argoworks_freegift>
+                <class>Argoworks_Freegift_Block</class>
+            </argoworks_freegift>
+            <adminhtml>
+                <rewrite>
+                  <promo_catalog_edit_tab_actions>Argoworks_Freegift_Block_Adminhtml_Promo_Catalog_Edit_Tab_Actions</promo_catalog_edit_tab_actions>
+                </rewrite>
+                <rewrite>
+                  <promo_quote_edit_tab_actions>Argoworks_Freegift_Block_Adminhtml_Promo_Quote_Edit_Tab_Actions</promo_quote_edit_tab_actions>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <helpers>
+            <argoworks_freegift>
+                <class>Argoworks_Freegift_Helper</class>
+            </argoworks_freegift>
+        </helpers>
+        <models>
+            <argoworks_freegift>
+                <class>Argoworks_Freegift_Model</class>
+            </argoworks_freegift>
+        </models>
+        
+         <resources>
+            <argoworks_freegift_setup>
+                <setup>
+                    <module>Argoworks_Freegift</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </argoworks_freegift_setup>
+        </resources>
+        <events>
+            <sales_quote_payment_import_data_before>
+                <observers>
+                    <argoworks_freegift_observers_payment_import_data_before>
+                        <class>Argoworks_Freegift_Model_Observer</class>
+                        <method>savePaymentFreeGift</method>
+                    </argoworks_freegift_observers_payment_import_data_before>
+                </observers>
+            </sales_quote_payment_import_data_before>
+              <sales_order_place_before>
+                <observers>
+                    <argoworks_freegift_observers_sales_order_place_before>
+                        <type>singleton</type>
+                        <class>Argoworks_Freegift_Model_Observer</class>
+                        <method>hookBeforeSalesOrder</method>
+                    </argoworks_freegift_observers_sales_order_place_before>
+                </observers>
+            </sales_order_place_before>
+        </events>
+    </global>
+     <adminhtml>
+<!--        <menu>
+            <freegift >
+                <title>Free Gift</title>
+                <sort_order>10000</sort_order>
+                <children>
+                    <items >
+                        <title>Manage Free Gift</title>
+                        <sort_order>0</sort_order>
+                        <action>adminhtml/ManageFreeGift</action>
+                    </items>
+                </children>
+                
+            </freegift>
+        </menu>-->
+         <!-- Access permissions -->
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+<!--                                <freegift translate="title" module="Freegift">
+                                    <title>free gift</title>
+                                </freegift>-->
+                                <config>
+                                    <children>
+                                        <freegift>
+                                            <title>free gift extension</title>
+                                        </freegift>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <freegift>
+                    <file>admin_freegift.xml</file>
+                </freegift>
+            </updates>
+        </layout>
+        
+    </adminhtml>
+    <!-- Admin router configuration-->
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Argoworks_Freegift after="Mage_Adminhtml">Argoworks_Freegift_Adminhtml</Argoworks_Freegift>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

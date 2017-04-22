@@ -1,0 +1,39 @@
+<?php
+ $_productCollection = $this->showGift();
+    if (Mage::getSingleton('customer/session')->isLoggedIn() ){
+        // Load the customer's data
+    $customer = Mage::getSingleton('customer/session')->getCustomer();
+        $giantpointM = Mage::getModel('giantpoints/customer');       
+        echo 'points current: '.$giantpointM->getBalance();
+//        var_dump(get_class_methods($giantpointM));
+        
+ ?>
+
+<div class="freegift" >
+        <?php foreach ($_productCollection as $key => $_product){  ?>
+        <div class="gift-image">   
+            <label for="checkbox_gift_<?php echo $_product->getId() ?>">
+                <img src="<?php echo Mage::helper('catalog/image')->init($_product, 'small_image')->resize(40,40);?>" alt="no image "  />                
+            <h5><?php echo $_product->getName(); ?></h5> 
+            <p><?php echo "Redeem ".$_product->getPoints(); ?></p> 
+            </label>
+            <input type="checkbox" name="gift" value="" id="checkbox_gift_<?php echo $_product->getId(); ?>"/>
+        </div> 
+        <?php }?>
+</div>
+ <?php }?>
+
+
+<script>
+jQuery(document).ready(function(){
+    jQuery(".gift-image label").click(function(){
+        if(jQuery(this).find('input').attr('checked')){
+            jQuery(this).find('input').attr('checked', false);
+        }else{
+            jQuery(this).find('input').attr('checked', true);
+        }
+        
+    });
+});
+
+</script>

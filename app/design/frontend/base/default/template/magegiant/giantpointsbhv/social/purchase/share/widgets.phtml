@@ -1,0 +1,32 @@
+<div class="social-purchase-earning-container">
+    <div class="<?php echo $this->getWidgetClass(); ?> social-earning-content">
+        <ul>
+            <?php foreach ($this->getSortedChildren() as $name): ?>
+                <?php $block = $this->getLayout()->getBlock($name); ?>
+                <?php if (!$block): ?>
+                    <?php Mage::throwException(Mage::helper('core')->__('Invalid block: %s', $name)); ?>
+                <?php endif; ?>
+                <?php if ($this->getProduct()) : ?>
+                    <?php $block->setProduct($this->getProduct()); ?>
+                <?php endif; ?>
+                <?php if ($this->getOrderId()) : ?>
+                    <?php $block->setOrderId($this->getOrderId()); ?>
+                <?php endif; ?>
+
+                <?php if (!$block->getIsHidden()) : ?>
+                    <?php echo $block->toHtml(); ?>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </ul>
+        <div class="social-earning-info <?php echo $this->getWidgetNotificationClass(); ?>">
+                <span id="social_ajax_loader" style="display: none"><img
+                        src="<?php echo $this->getSkinUrl('css/magegiant/giantpoints/images/ajax-loader.gif'); ?>"/>
+                </span>
+            <span id="social_earn_info_message"></span>
+        </div>
+        <script type="text/javascript">
+            var socialWidgetName = '<?php echo $this->getWidgetName(); ?>';
+            window[socialWidgetName] = new GiantPointsSocialWidgetHover();
+        </script>
+    </div>
+</div>

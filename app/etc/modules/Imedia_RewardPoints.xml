@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Imedia_RewardPoints>
+            <active>false</active>
+            <codePool>community</codePool>
+        </Imedia_RewardPoints>
+    </modules>
+</config>

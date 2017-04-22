@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageGiant
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MageGiant.com license that is
+ * available through the world-wide-web at this URL:
+ * http://magegiant.com/license-agreement/
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    MageGiant
+ * @package     MageGiant_GiantPointsBehavior
+ * @copyright   Copyright (c) 2014 MageGiant (http://magegiant.com/)
+ * @license     http://magegiant.com/license-agreement/
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <!--Left Newsletter-->
+        <reference name="left.newsletter">
+            <block type="giantpointsbhv/earning" name="behavior.newsletter" as="behavior_newsletter" template="magegiant/giantpointsbhv/newsletter/left.phtml"/>
+        </reference>
+        <reference name="footer.newsletter">
+            <block type="giantpointsbhv/earning" name="behavior.newsletter" as="behavior_newsletter" template="magegiant/giantpointsbhv/newsletter/footer.phtml"/>
+        </reference>
+        <reference name="right.poll">
+            <block type="giantpointsbhv/earning" name="behavior.right.poll" as="behavior_right_poll" template="magegiant/giantpointsbhv/poll.phtml"/>
+        </reference>
+    </default>
+    <catalog_product_view>
+        <reference name="product.info.additional">
+            <block type="giantpointsbhv/earning" name="giantspoints.tag" as="giantspoints_tag"
+                   template="magegiant/giantpointsbhv/tag.phtml" after="product_tag_list"/>
+        </reference>
+    </catalog_product_view>
+    <checkout_onepage_success>
+        <reference name="head">
+            <action method="addJs">
+                <script>magegiant/giantpointsbhv/social/purchase/share.js</script>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/magegiant/giantpointsbhv/social/purchase/widgets.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="giantpointsbhv/social_purchase_share" name="giantpoints.checkout.purchase.share" template="magegiant/giantpointsbhv/social/purchase/share.phtml">
+                <block type="giantpointsbhv/social_purchase_share_items" name="giantpoints.behavior.social.order.items" template="magegiant/giantpointsbhv/social/purchase/share/items.phtml">
+                    <block type="giantpointsbhv/social_purchase_share_widgets" name="giantpoints.checkout.purchase.share.widgets" template="magegiant/giantpointsbhv/social/purchase/share/widgets.phtml">
+                        <block type="giantpointsbhv/social_purchase_share_widgets_facebook" name="giantpoints.checkout.purchase.share.widgets.facebook" template="magegiant/giantpointsbhv/social/purchase/share/widgets/facebook/share.phtml"/>
+                        <block type="giantpointsbhv/social_purchase_share_widgets_twitter" name="giantpoints.checkout.purchase.share.widgets.twitter" template="magegiant/giantpointsbhv/social/purchase/share/widgets/twitter/tweet.phtml"/>
+                    </block>
+                </block>
+            </block>
+        </reference>
+        <reference name="before_body_end">
+            <block type="giantpointsbhv/social_purchase_share" name="giantpoints.purchase.share.event.register"
+                   as="purchase.share.event.register" template="magegiant/giantpointsbhv/social/purchase/share/event/register.phtml"/>
+        </reference>
+    </checkout_onepage_success>
+    <!--===============Behavior Earning====================-->
+    <customer_account_create>
+        <reference name="before_body_end">
+            <block type="giantpointsbhv/earning" name="behavior_register" template="magegiant/giantpointsbhv/account/signup.phtml"/>
+        </reference>
+    </customer_account_create>
+    <customer_account_edit>
+        <reference name="before_body_end">
+            <block type="giantpointsbhv/earning" name="behavior_register_dashboard" template="magegiant/giantpointsbhv/account/edit.phtml"/>
+        </reference>
+    </customer_account_edit>
+    <customer_account_login>
+        <reference name="before_body_end">
+            <block type="giantpointsbhv/earning" name="behavior_register_login" template="magegiant/giantpointsbhv/account/login.phtml"/>
+        </reference>
+    </customer_account_login>
+    <catalog_product_view>
+        <reference name="alert.urls">
+            <block type="giantpointsbhv/earning" name="giantpoints.product.review" before="-" template="magegiant/giantpointsbhv/review.phtml"/>
+        </reference>
+    </catalog_product_view>
+    <review_product_list>
+        <reference name="product.review.form.fields.before">
+            <block type="giantpointsbhv/earning" name="giantpoints.review"
+                   as="giantpoints_review" template="magegiant/giantpointsbhv/review.phtml"/>
+        </reference>
+    </review_product_list>
+    <checkout_onepage_index>
+        <reference name="checkout.onepage.login.before">
+            <block type="giantpointsbhv/earning"
+                   name="giantpoints.checkout.onepage.earning"
+                   as="giantpoints_checkout_onepage_earning"
+                   template="magegiant/giantpointsbhv/onepage/signup.phtml"></block>
+        </reference>
+        <reference name="before_body_end">
+            <block type="giantpointsbhv/earning"
+                   name="giantpoints.checkout.onepage.birthday"
+                   template="magegiant/giantpointsbhv/onepage/birthday.phtml">
+            </block>
+        </reference>
+    </checkout_onepage_index>
+    <newsletter_manage_index>
+        <reference name="customer.newsletter.form.before">
+            <block type="giantpointsbhv/earning" name="behavior.newsletter" as="behavior_newsletter" template="magegiant/giantpointsbhv/newsletter.phtml"/>
+        </reference>
+    </newsletter_manage_index>
+    <giantpointbhv_social_earning>
+        <reference name="head">
+            <action method="addJs">
+                <script>magegiant/giantpointsbhv/social.js</script>
+            </action>
+        </reference>
+        <reference name="behavior.social.earning">
+            <block type="giantpointsbhv/social_facebook" name="behavior.facebook" as="behavior_facebook" template="magegiant/giantpointsbhv/social/facebook.phtml"/>
+            <block type="giantpointsbhv/social_twitter" name="behavior.twitter" after="behavior_facebook" as="behavior_twitter" before="-" template="magegiant/giantpointsbhv/social/twitter.phtml"/>
+            <block type="giantpointsbhv/social_google" name="behavior.google" after="behavior_twitter" as="behavior_google" before="-" template="magegiant/giantpointsbhv/social/google.phtml"/>
+        </reference>
+    </giantpointbhv_social_earning>
+    <cms_index_index>
+        <update handle="giantpointbhv_social_earning"/>
+    </cms_index_index>
+    <catalog_category_default>
+        <update handle="giantpointbhv_social_earning"/>
+    </catalog_category_default>
+    <catalog_category_layered>
+        <update handle="giantpointbhv_social_earning"/>
+    </catalog_category_layered>
+    <catalog_product_view>
+        <update handle="giantpointbhv_social_earning"/>
+    </catalog_product_view>
+
+    <!--================End behavior earn===================-->
+</layout>

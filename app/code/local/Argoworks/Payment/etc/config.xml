@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Argoworks_Payment>
+			<version>1.0.0</version>
+		</Argoworks_Payment>
+	</modules>
+	<global>
+		<helpers>
+			<argoworks_payment>
+				<class>Argoworks_Payment_Helper</class>
+			</argoworks_payment>
+		</helpers>
+		<models>
+			<argoworks_payment>
+				<class>Argoworks_Payment_Model</class>
+			</argoworks_payment>
+		</models>
+		<blocks>
+			<argoworks_payment>
+				<class>Argoworks_Payment_Block</class>
+			</argoworks_payment>
+		</blocks>
+	</global>
+</config>

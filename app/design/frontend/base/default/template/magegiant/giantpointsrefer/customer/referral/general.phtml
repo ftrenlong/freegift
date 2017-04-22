@@ -1,0 +1,68 @@
+<?php
+/**
+ * Magegiant
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magegiant.com license that is
+ * available through the world-wide-web at this URL:
+ * https://magegiant.com/license-agreement/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magegiant
+ * @package     Magegiant_GiantPoints
+ * @copyright   Copyright (c) 2014 Magegiant (https://magegiant.com/)
+ * @license     https://magegiant.com/license-agreement/
+ */
+?>
+<div class="giantpoints-referral-container">
+    <div class="page-title">
+        <h1><?php echo $this->__('Referral Program') ?></h1>
+    </div>
+
+    <div class="box-account box-info box-referral">
+        <div class="box-head">
+            <h2 class="box-title"><?php echo $this->__('Referral policy') ?>
+            </h2>
+        </div>
+        <div class="referral-content">
+            <dl class="box-content">
+                <dt>
+                    <b>
+                        <?php echo $this->__('Share your referring link with your friends and earn commissions.') ?>
+                    </b>
+                </dt>
+                <dd>
+                    <?php if ($this->getPointsCommissionInfo()): ?>
+                        <?php echo $this->getPointsCommissionInfo(); ?>
+                    <?php endif; ?>
+                </dd>
+                <dd>
+                    <?php if ($this->getPointsInvitedInfo()): ?>
+                        <?php echo $this->getPointsInvitedInfo(); ?>
+                    <?php endif; ?>
+                </dd>
+                <dd>
+                    <div class="bt-view-invitation">
+                        <a href="<?php echo $this->getInvitationUrl() ?>">
+                            <small>&rAarr; </small>  <?php echo $this->__('View My Invitations') ?>
+                        </a>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml() ?>
+    <div class="buttons-set">
+        <p class="back-link">
+            <a href="<?php echo $this->getBackUrl() ?>">
+                <small>&laquo; </small>  <?php echo $this->__('Back') ?>
+            </a>
+        </p>
+    </div>
+</div>
+

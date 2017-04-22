@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_manage_index>
+        <reference name="content">
+            <block type="pointofsale/adminhtml_manage" name="pointofsale" />
+        </reference>
+    </adminhtml_manage_index>
+    <adminhtml_manage_edit>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>wyomind/pointofsale/js/edit.js</name></action>		
+        </reference>
+    </adminhtml_manage_edit>
+</layout>

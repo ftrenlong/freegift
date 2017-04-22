@@ -1,0 +1,41 @@
+<?php
+/**
+ * Magegiant
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magegiant.com license that is
+ * available through the world-wide-web at this URL:
+ * https://magegiant.com/license-agreement/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magegiant
+ * @package     Magegiant_GiantPoints
+ * @copyright   Copyright (c) 2014 Magegiant (https://magegiant.com/)
+ * @license     https://magegiant.com/license-agreement/
+ */
+?>
+<script type="text/javascript">
+    //<![CDATA[
+    document.observe('dom:loaded',function(){
+        <?php if ($this->getRewardNewsletter()): ?>
+        var message = '<div class="giantpoints-newsletter" style="width:inherit">' + '<?php echo $this->getRewardNewsletter()?>' + '</div >';
+        if ($('newsletter-validate-detail')) {
+            if ($('newsletter-validate-detail').down('.block-content')) {
+                var elNewsletter = $('newsletter-validate-detail').down('.block-content');
+                elNewsletter.insert(message);
+            }
+        }
+        if ($('form-validate')) {
+            if ($('form-validate').down('ul')) {
+                $('form-validate').down('ul').insert('<li>'+message+'</li>');
+            }
+        }
+        <?php endif; ?>
+    })
+    //]]>
+</script>

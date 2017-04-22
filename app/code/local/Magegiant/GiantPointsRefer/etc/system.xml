@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magegiant
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the magegiant.com license that is
+ * available through the world-wide-web at this URL:
+ * http://magegiant.com/license-agreement/
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    Magegiant
+ * @package     Magegiant_GiantPointsRefer
+ * @copyright   Copyright (c) 2014 Magegiant (http://magegiant.com/)
+ * @license     http://magegiant.com/license-agreement/
+ */
+-->
+<config>
+    <sections>
+        <giantpoints translate="label" module="giantpoints">
+            <groups>
+<!--                <referral_system_configuration translate="label">
+                    <label>Referral Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>60</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label comment">
+                            <label>Enable referral system</label>
+                            <comment>Enable/Disable Reward Points Refer</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <share_icon translate="label comment">
+                            <label>Referral Share Icon</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1"><![CDATA[magegiant/giantpoints/icon]]></upload_dir>
+                            <base_url type="media" scope_info="1"><![CDATA[magegiant/giantpoints/icon]]></base_url>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>If empty, the image on template will be used.</comment>
+                        </share_icon>
+                        <yahoo_consumer_key translate="label">
+                            <label>Yahoo Consumer Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </yahoo_consumer_key>
+                        <yahoo_consumer_secret translate="label">
+                            <label>Yahoo Consumer Secret</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                <![CDATA[<a href="https://developer.apps.yahoo.com/dashboard/createKey.html" target="_bank">Register to Yahoo</a>]]>
+                            </comment>
+                        </yahoo_consumer_secret>
+                        <google_consumer_key translate="label">
+                            <label>Google Client ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </google_consumer_key>
+                        <google_consumer_secret translate="label">
+                            <label>Google Client Secret</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                <![CDATA[<a href="https://console.developers.google.com" target="_bank">Register to Google</a>]]>
+                            </comment>
+                        </google_consumer_secret>
+                    </fields>
+                </referral_system_configuration>-->
+                <milestone>
+                    <fields>
+                        <referrals_trigger translate="label comment">
+                            <label><![CDATA[Referrals Milestone Trigger]]></label>
+                            <comment><![CDATA[Count this as a "referral".]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>giantpointsrefer/system_config_source_referral_status</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </referrals_trigger>
+                        <referrals_email_template translate="label comment">
+                            <label><![CDATA[Referrals Milestone Email Template]]></label>
+                            <comment>
+                                <![CDATA[
+                                Select email template for Number of Referrals. You can custom your own <a href="http://go.magegiant.com/custom-email-transaction" target="_blank">transactional email.</a>
+                                ]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </referrals_email_template>
+                    </fields>
+                </milestone>
+            </groups>
+        </giantpoints>
+    </sections>
+</config>

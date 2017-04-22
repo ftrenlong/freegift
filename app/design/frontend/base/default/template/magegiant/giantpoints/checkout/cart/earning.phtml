@@ -1,0 +1,93 @@
+<?php
+/**
+ * Magegiant
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magegiant.com license that is
+ * available through the world-wide-web at this URL:
+ * https://magegiant.com/license-agreement/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magegiant
+ * @package     Magegiant_GiantPoints
+ * @copyright   Copyright (c) 2014 Magegiant (https://magegiant.com/)
+ * @license     https://magegiant.com/license-agreement/
+ */
+?>
+<?php if ($this->canShow()): ?>
+    <?php
+    $_helper       = Mage::helper('giantpoints');
+    $_helperConfig = Mage::helper('giantpoints/config');
+    $_giantPoints  = $this->getPoints();
+    ?>
+    <div>
+        <?php if ($_giantPoints->getPointAmount()): ?>
+            <ul class="giant-messages">
+                <li class="giantpoints-notice-msg">
+                    <ul>
+                        <li>
+                            <p><?php echo $this->__('Checkout now and earn %s', $_helper->addLabelForPoint($_giantPoints->getPointAmount())) ?></p>
+                        </li>
+                        <?php if ($_helperConfig->showDetailEarning()): ?>
+                            <li>
+                                <ul>
+                                    <?php $count = 1; ?>
+                                    <?php foreach ($_giantPoints->getInfo() as $info): ?>
+                                        <li>
+                                            <span class="detail-label">-&nbsp;<?php echo $info->getName() ?>
+                                                <?php if (isset($info['description'])): ?>
+
+                                                    <a href="javascript:void(0)"
+                                                       id="giant-earning-description-<?php echo $count ?>"
+                                                       class="giant-earning-description">
+                                                        <img
+                                                            src="<?php echo $this->getSkinUrl('css/magegiant/giantpoints/images/description_icon.png') ?>"
+                                                            width="16px"/></a>
+                                                    <div id='giant-earning-tooltip-<?php echo $count ?>'
+                                                         style="display: none;" class="giant-earning-tooltip">
+                                                        <?php echo $info['description']; ?>
+                                                    </div>
+                                                    <script type="text/javascript">
+                                                        $('giant-earning-description-<?php echo $count ?>').observe('mousemove', function () {
+                                                            var mainContainer = $$('.main-container').first();
+                                                            if (mainContainer) {
+                                                                mainContainer.setStyle({
+                                                                    position: 'inherit'
+                                                                });
+                                                            }
+                                                        });
+                                                        $('giant-earning-description-<?php echo $count ?>').observe('mouseout', function () {
+                                                            var mainContainer = $$('.main-container').first();
+                                                            if (mainContainer) {
+                                                                mainContainer.setStyle({
+                                                                    position: 'relative'
+                                                                });
+                                                            }
+                                                        });
+                                                        new Tooltip('giant-earning-description-<?php echo $count ?>', 'giant-earning-tooltip-<?php echo $count;?>');
+                                                    </script>
+                                                <?php endif; ?>
+                                                :</span>
+                                            <?php echo $_helper->addLabelForPoint($info->getPointAmount()); ?>
+                                        </li>
+                                        <?php $count++; ?>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </li>
+                        <?php endif; ?>
+                        <?php if ($this->customerIsGuest()): ?>
+                            <li>
+                                <?php echo $this->__('Applies only to registered customers, may vary when logged in.') ?>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </li>
+            </ul>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
